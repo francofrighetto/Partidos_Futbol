@@ -1,0 +1,1 @@
+Invoke-RestMethod https://www.promiedos.com.ar/ > "D:\Franco\algoritmos o programacion extra\Proyectos\Partidos_Futbol\archivo.txt"

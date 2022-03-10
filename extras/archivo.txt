@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+<title>PROMIEDOS - Futbol Argentino - Promedios, Fixture, Posiciones, Copas</title>
+<meta name="description" content="Pagina web del Futbol Argentino. Incluye resultados, fixture, promedios, tablas de posiciones, goleadores. Incluye torneos de Primera, Superliga, Copa Argentina, Copa Libertadores, Champions League y muchos mas"/>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+<meta name="author" content="FEDONTE" />
+<link rel="shortcut icon" href="//www.promiedos.com.ar/favicon.ico" />
+<meta name="format-detection" content="telephone=no">
+<link href="css/goog.css" rel="stylesheet" />
+<link href="css/estilopc.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/brackets_pc.css" />
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- <script src="js/jquery-3.4.1.min.js"></script> -->
+<script src="js/horarios_5.js"></script>
+<script src="js/menu.js"></script>
+<script>
+var zonahoraria=0;
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-186291981-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-186291981-1');
+</script>
+</head>
+
+<body>
+
+<div class="banner"><a href="//www.promiedos.com.ar/"><img src="images/menu/logo2.jpg" /></a></div>
+<div id="haygol1">
+</div>
+<div id="haygol2">
+</div>
+<div id="haygol3">
+</div>
+<div id="haygol4">
+</div>
+<div id="haygol5">
+</div>
+<div id="menuboton">
+<img src="images/menu/menu4.png" /> MENU
+</div>
+
+<div id="volvermenu">
+<img src="images/menu/menu3.png" /> CERRAR
+</div>
+
+<div id="accordian">
+	<ul>
+
+<div class="botonch2">
+
+<a href="regfacebook2b.php">
+<img src="images/menu/facebook.png" width="25px" /><br />
+Click aca para entrar/registrar usuario
+en Promiedos.
+</a>
+
+</div>
+<br />
+	   <li>
+			<h4><a href="//www.promiedos.com.ar/"><i class="material-icons md-18">home</i> Inicio</a></h4>
+		</li>
+<br />
+		<li>
+			<h3><img src="images/paises/ar.png" /> Argentina</h3>
+			<ul class="items-menu">
+				<li><a href="copadeliga">Copa de la Liga</a></li>
+				<li><a href="primera">Primera</a></li>
+                <li><a href="historiales">-Historiales</a></li>
+                <li><a href="tablahistorica">-Tabla Historica</a></li>
+                <li><a href="copaargentina">Copa Argentina</a></li>
+                <li><a href="copasnacionales">Copas Nacionales</a></li>  
+                <li><a href="rankingtitulos">Ranking Titulos</a></li>
+				<li><a href="bnacional">Prim. B Nacional</a></li>
+				<li><a href="bmetro">B Metro</a></li>
+                <li><a href="federala">Federal A</a></li>
+				<li><a href="primerac">Primera C</a></li>
+                <li><a href="primerad">Primera D</a></li>
+                <li><a href="reserva">Reserva</a></li>
+                <li><a href="futbolfem">Femenino</a></li>
+
+
+
+			</ul>
+		</li>
+		<li>
+			<h3><i class="material-icons md-18">emoji_events</i> Copas Int.</h3>
+			<ul class="items-menu"> 
+               <li><a href="rankinginternacional">Ranking Copas Int</a></li>
+				<li><a href="mundialclubes">Mundial Clubes</a></li>
+				<li><a href="libertadores">Libertadores</a></li>
+				<li><a href="sudamericana">Sudamericana</a></li>
+                <li><a href="copasconmebol">+Copas Conmebol</a></li>
+				<li><a href="championsleague">Champions</a></li>
+				<li><a href="europaleague">Europa League</a></li>
+				<li><a href="conference">Conference</a></li>
+                <li><a href="copasuefa">+Copas UEFA</a></li>
+                <li><a href="concachampions">Concachampions</a></li>
+                <li><a href="copasconcacaf">+Copas Concacaf</a></li>
+                <li><a href="copasafc">Copas AFC</a></li>
+                <li><a href="copascaf">Copas CAF</a></li>
+                <li><a href="copasofc">Copas OFC</a></li>
+ 
+			</ul>
+		</li>
+		<li>
+			<h3><i class="material-icons md-18">public</i> Ligas</h3>
+			<ul class="items-menu">
+				<li><a href="inglaterra"><img src="images/paises/in.png" />Premier League</a></li>
+				<li><a href="francia"><img src="images/paises/fr.png" />Ligue 1</a></li>
+				<li><a href="italia"><img src="images/paises/it.png" />Serie A</a></li>
+				<li><a href="espana"><img src="images/paises/es.png" />La Liga</a></li>
+				<li><a href="alemania"><img src="images/paises/de.png" />Bundesliga</a></li>
+				<li><a href="paisesbajos"><img src="images/paises/ho.png" />Eredivisie</a></li>
+                <li><a href="brasil"><img src="images/paises/br.png" />Brasileirao</a></li>
+                <li><a href="uruguay"><img src="images/paises/uy.png" />Uruguay</a></li>
+                <li><a href="paraguay"><img src="images/paises/py.png" />Paraguay</a></li>
+                <li><a href="colombia"><img src="images/paises/co.png" />Colombia</a></li>
+                <li><a href="chile"><img src="images/paises/cl.png" />Chile</a></li>
+                <li><a href="mexico"><img src="images/paises/mx.png" />Liga MX</a></li>
+                <li><a href="usa"><img src="images/paises/us.png" />MLS</a></li>  
+			</ul>
+		</li>
+		<li>
+			<h3><i class="material-icons md-18">flag</i> Selecciones</h3>
+			<ul class="items-menu">
+				<li><a href="copaamerica">Copa America</a></li>
+				<li><a href="eurocopa">Eurocopa</a></li>
+				<li><a href="copaafrica">Copa Africa</a></li>
+				<li><a href="jjoo">J. Olimpicos</a></li>
+				<li><a href="liganacionesuefa">Naciones UEFA</a></li>
+				<li><a href="mundial">Qatar 22</a></li>
+				<ul><li></li><li><a href="elimconmebol">-Elim. Conmebol</a></li>
+				<li><a href="elimuefa">-Elim. Uefa</a></li>
+				<li><a href="elimconcacaf">-Elim. Concacaf</a></li>
+				<li><a href="elimcaf">-Elim. Africa</a></li>
+				<li><a href="elimafc">-Elim. Asia</a></li><li></li></ul> 
+				<li><a href="historialseleccion">Historial Seleccion</a></li>
+			</ul>
+		</li>
+<br />
+<h4><a href="comunidad"><i class="material-icons md-18">people</i> Comunidad</a></h4>
+<li><h4><a href="prode"><i class="material-icons md-18">casino</i> Prodemios</a></h4></li>
+<li><h4><a href="calendario"><i class="material-icons md-18">calendar_today</i> Calendario</a></h4>	</li>
+<br />
+
+	</ul>
+<br />
+<div class="botlink">
+<a href="contacto">Contacto</a><br />
+</div>
+<br /><br />
+<div class="botlink2">
+<a href="legal.php">Legal</a> -
+<a href="privacidad.php">Privacidad</a> 
+</div><br /><br /><div style="text-align:center;font-size:1em">Ayudanos a seguir creciendo:<br /><a href="donar" style="color:greenyellow;text-decoration:none;font-size:1.2em">Donar</a></div>
+
+
+<br /><br />
+<div id="botlink3">
+    <a id="part1" href="https://twitter.com/Promiedos" target="_blank"></a>
+    <a id="part2" href="https://www.facebook.com/promiedos/" target="_blank"></a>
+    <a id="part3" href="https://www.instagram.com/promiedosok/" target="_blank"></a>
+</div>
+<br /><br />
+Promiedos 2009-2022<br />
+<br /><br /><br />
+<a href="https://play.google.com/store/apps/details?id=com.fedonte.easyagecalculator" target="_blank"></a>
+</div>
+<div id="somediv"></div>
+
+<div id="principal">
+
+
+<div id="partidos">
+<br />
+<script type="text/javascript" src="js/jsindex.js"></script>
+<script type="text/javascript">
+var sonido=1;
+var torneos=[1, 2, 34, 35, 36, 37, 2, 3, 7, 5, 6, 10, 11, 12, 25, 26, 27, 45, 46, 51, 55, 60, 64, 66, 68, 69, 70, 80, 81, 82, 83, 84, 87, 88, 24, 50, 71, 72, 73, 74, 75, 85, 87, 88, 89, 90, 91, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250];
+var sonipar=[0,250];
+var ocultos=[0,250];
+</script>
+<script type="text/javascript">
+var vivo=1;
+</script>
+<script type="text/javascript" src="js/indexf1.js"></script>
+
+<script type="text/javascript" src="js/generadorpc.js"></script>
+
+
+
+
+<div id="bayer">
+<a href="ayer">
+<img src="images/menu/arrow-left.png" />
+<br />
+Ayer
+</a>
+</div>
+
+<div id="titulo1">
+PARTIDOS 
+<br />
+HOY
+</div>
+
+<div id="bman">
+<a href="man">
+<img src="images/menu/arrow-right.png" />
+<br />
+Man
+</a>
+</div>
+
+</div>
+
+<br style="clear: both;" />
+<div id="pub728">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Largo -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-4577885464956557"
+     data-ad-slot="5464097989"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<br style="clear: both;" />
+
+<div id="partidos">
+
+<div id="botonesarriba" style="margin: auto;width:100%;text-align: center;">
+
+<a href="cambiarop.php?conf=H&value=1" class="bgdg" onclick="return confirm('Estas seguro de cambiar zona horaria?')"> Hora:<br />Argentina/Ur/Br</a>
+<a href="cambiarop.php?conf=GDG&value=2" class="bgdg">Grito de Gol:<br />Activado</a>
+
+<a href="cambiarop.php?conf=V&value=2" class="bvi">Mostrar:<br />Todos</a>
+</div>
+
+<br style="clear: both ;" />
+<br />
+
+
+<div class="35" name='novi'><div id="fixturein"><table cellspacing="0" ><tr><td class="game-time"></td><td class="game-t1"></td><td class="game-r1"></td><td class="game-r2"></td><td class="game-t2"></td><td class="game-info"></td></tr><tr class="tituloin"><td colspan="6"><a href="libertadores"><img src="images/paises/mu.png" /> COPA LIBERTADORES <img src="images/paises/mu.png" /></a></td></tr><tr id="choy_35_2" class="choy" name='nvp'><td colspan="6">Ida: City Torque 1 - 1 Barcelona (E)</td></tr> <tr id="35_2" name='nvp'><td class="game-time" id="ti_35_2">21:30  <img src="images/ca/104.png" /></td><td class="game-t1"><img src='images/ps/ecuador.gif' /> <img src='images/18/761.png' /><br /><span class="datoequipo" id="t1_35_2">Barcelona (E)</span></td><td class="game-r1" id="resu1_35_2"><div class="rojas1" id="roj1_35_2"></div><span id="r1_35_2"></span></td><td class="game-r2" id="resu2_35_2"><span id="r2_35_2"></span><div class="rojas2" id="roj2_35_2"></div></td><td class="game-t1"><img src='images/18/1328.png' /> <img src='images/ps/uruguay.gif' /> <br /><span class="datoequipo" id="t2_35_2">City Torque</span></td><td class="game-info" id="for_35_2"></td></tr><tr class="goles" style="display:none" id="gole_35_2"><td colspan="3" id="g1_35_2"></td><td colspan="3" id="g2_35_2"></td></tr></table></div><div id="abajo"><div id="botongral1"><a href="libertadores">Seccion<br />Copa Libertadores</a></div><div id="botongral3b" class="ocu_35"></div><div id="botongral3a" class="son_35"></div></div><br style="clear: both" /></div><div class="cuadrono35" name='novi' copa="Copa Libertadores" id="cuadrono"></div><div class="37" name='novi'><div id="fixturein"><table cellspacing="0" ><tr><td class="game-time"></td><td class="game-t1"></td><td class="game-r1"></td><td class="game-r2"></td><td class="game-t2"></td><td class="game-info"></td></tr><tr class="tituloin"><td colspan="6"><a href="championsleague"><img src="images/paises/mu.png" /> CHAMPIONS LEAGUE <img src="images/paises/mu.png" /></a></td></tr> <tr id="37_99" name='nvp'><td class="game-time" id="ti_37_99">17:00  <img src="images/ca/50.png" /></td><td class="game-t1"><img src='images/ps/portugal.gif' /> <img src='images/18/706.png' /><br /><span class="datoequipo" id="t1_37_99">Sporting Lisboa</span></td><td class="game-r1" id="resu1_37_99"><div class="rojas1" id="roj1_37_99"></div><span id="r1_37_99"></span></td><td class="game-r2" id="resu2_37_99"><span id="r2_37_99"></span><div class="rojas2" id="roj2_37_99"></div></td><td class="game-t1"><img src='images/18/535.png' /> <img src='images/ps/inglaterra.gif' /> <br /><span class="datoequipo" id="t2_37_99">Manchester City</span></td><td class="game-info" id="for_37_99"></td></tr><tr class="goles" style="display:none" id="gole_37_99"><td colspan="3" id="g1_37_99"></td><td colspan="3" id="g2_37_99"></td></tr> <tr id="37_111" name='nvp'><td class="game-time" id="ti_37_111">17:00  <img src="images/ca/104.png" /></td><td class="game-t1"><img src='images/ps/francia.gif' /> <img src='images/18/652.png' /><br /><span class="datoequipo" id="t1_37_111">PSG</span></td><td class="game-r1" id="resu1_37_111"><div class="rojas1" id="roj1_37_111"></div><span id="r1_37_111"></span></td><td class="game-r2" id="resu2_37_111"><span id="r2_37_111"></span><div class="rojas2" id="roj2_37_111"></div></td><td class="game-t1"><img src='images/18/527.png' /> <img src='images/ps/espana.gif' /> <br /><span class="datoequipo" id="t2_37_111">Real Madrid</span></td><td class="game-info" id="for_37_111"></td></tr><tr class="goles" style="display:none" id="gole_37_111"><td colspan="3" id="g1_37_111"></td><td colspan="3" id="g2_37_111"></td></tr></table></div><div id="abajo"><div id="botongral1"><a href="championsleague">Seccion<br />Champions League</a></div><div id="botongral3b" class="ocu_37"></div><div id="botongral3a" class="son_37"></div></div><br style="clear: both" /></div><div class="cuadrono37" name='novi' copa="Champions League" id="cuadrono"></div><div class="1" name='novi'><div id="fixturein"><table cellspacing="0" ><tr><td class="game-time"></td><td class="game-t1"></td><td class="game-r1"></td><td class="game-r2"></td><td class="game-t2"></td><td class="game-info"></td></tr><tr class="tituloin"><td colspan="6"><a href="copadeliga"><img src="images/paises/ar.png" /> COPA DE LA LIGA <img src="images/paises/ar.png" /></a></td></tr> <tr id="1_75" name='nvp'><td class="game-time" id="ti_1_75">17:00  <img src="images/ca/7.png" /></td><td class="game-t1"><img src='images/18/3.png' /><br /><span class="datoequipo" id="t1_1_75">Argentinos</span></td><td class="game-r1" id="resu1_1_75"><div class="rojas1" id="roj1_1_75"></div><span id="r1_1_75"></span></td><td class="game-r2" id="resu2_1_75"><span id="r2_1_75"></span><div class="rojas2" id="roj2_1_75"></div></td><td class="game-t1"><img src='images/18/14.png' /><br /><span class="datoequipo" id="t2_1_75">Newells</span></td><td class="game-info" id="for_1_75"></td></tr><tr class="goles" style="display:none" id="gole_1_75"><td colspan="3" id="g1_1_75"></td><td colspan="3" id="g2_1_75"></td></tr> <tr id="1_82" name='nvp'><td class="game-time" id="ti_1_82">19:15  <img src="images/ca/103.png" /></td><td class="game-t1"><img src='images/18/35.png' /><br /><span class="datoequipo" id="t1_1_82">Rosario Central</span></td><td class="game-r1" id="resu1_1_82"><div class="rojas1" id="roj1_1_82"></div><span id="r1_1_82"></span></td><td class="game-r2" id="resu2_1_82"><span id="r2_1_82"></span><div class="rojas2" id="roj2_1_82"></div></td><td class="game-t1"><img src='images/18/21.png' /><br /><span class="datoequipo" id="t2_1_82">Velez</span></td><td class="game-info" id="for_1_82"></td></tr><tr class="goles" style="display:none" id="gole_1_82"><td colspan="3" id="g1_1_82"></td><td colspan="3" id="g2_1_82"></td></tr> <tr id="1_83" name='nvp'><td class="game-time" id="ti_1_83">19:15  <img src="images/ca/102.png" /></td><td class="game-t1"><img src='images/18/12.png' /><br /><span class="datoequipo" id="t1_1_83">Independiente</span></td><td class="game-r1" id="resu1_1_83"><div class="rojas1" id="roj1_1_83"></div><span id="r1_1_83"></span></td><td class="game-r2" id="resu2_1_83"><span id="r2_1_83"></span><div class="rojas2" id="roj2_1_83"></div></td><td class="game-t1"><img src='images/18/4.png' /><br /><span class="datoequipo" id="t2_1_83">Arsenal</span></td><td class="game-info" id="for_1_83"></td></tr><tr class="goles" style="display:none" id="gole_1_83"><td colspan="3" id="g1_1_83"></td><td colspan="3" id="g2_1_83"></td></tr> <tr id="1_78" name='nvp'><td class="game-time" id="ti_1_78">21:30  <img src="images/ca/103.png" /></td><td class="game-t1"><img src='images/18/13.png' /><br /><span class="datoequipo" id="t1_1_78">Lanus</span></td><td class="game-r1" id="resu1_1_78"><div class="rojas1" id="roj1_1_78"></div><span id="r1_1_78"></span></td><td class="game-r2" id="resu2_1_78"><span id="r2_1_78"></span><div class="rojas2" id="roj2_1_78"></div></td><td class="game-t1"><img src='images/18/82.png' /><br /><span class="datoequipo" id="t2_1_78">Barracas Central</span></td><td class="game-info" id="for_1_78"></td></tr><tr class="goles" style="display:none" id="gole_1_78"><td colspan="3" id="g1_1_78"></td><td colspan="3" id="g2_1_78"></td></tr> <tr id="1_84" name='nvp'><td class="game-time" id="ti_1_84">21:30  <img src="images/ca/7.png" /></td><td class="game-t1"><img src='images/18/11.png' /><br /><span class="datoequipo" id="t1_1_84">Huracan</span></td><td class="game-r1" id="resu1_1_84"><div class="rojas1" id="roj1_1_84"></div><span id="r1_1_84"></span></td><td class="game-r2" id="resu2_1_84"><span id="r2_1_84"></span><div class="rojas2" id="roj2_1_84"></div></td><td class="game-t1"><img src='images/18/8.png' /><br /><span class="datoequipo" id="t2_1_84">Estudiantes (LP)</span></td><td class="game-info" id="for_1_84"></td></tr><tr class="goles" style="display:none" id="gole_1_84"><td colspan="3" id="g1_1_84"></td><td colspan="3" id="g2_1_84"></td></tr></table></div><div id="abajo"><div id="botongral1"><a href="copadeliga">Seccion<br />Copa de la Liga</a></div><div id="botongral3b" class="ocu_1"></div><div id="botongral3a" class="son_1"></div></div><br style="clear: both" /></div><div class="cuadrono1" name='novi' copa="Copa de la Liga" id="cuadrono"></div><div class="12" name='novi'><div id="fixturein"><table cellspacing="0" ><tr><td class="game-time"></td><td class="game-t1"></td><td class="game-r1"></td><td class="game-r2"></td><td class="game-t2"></td><td class="game-info"></td></tr><tr class="tituloin"><td colspan="6"><a href="inglaterra"><img src="images/paises/in.png" /> PREMIER LEAGUE <img src="images/paises/in.png" /></a></td></tr><tr id="choy_12_174" class="choy" name='nvp'><td colspan="6">Pendiente Fecha 18</td></tr> <tr id="12_174" name='nvp'><td class="game-time" id="ti_12_174">17:15  </td><td class="game-t1"><img src='images/18/536.png' /><br /><span class="datoequipo" id="t1_12_174">Manchester United</span></td><td class="game-r1" id="resu1_12_174"><div class="rojas1" id="roj1_12_174"></div><span id="r1_12_174"></span></td><td class="game-r2" id="resu2_12_174"><span id="r2_12_174"></span><div class="rojas2" id="roj2_12_174"></div></td><td class="game-t1"><img src='images/18/694.png' /><br /><span class="datoequipo" id="t2_12_174">Brighton And Hove</span></td><td class="game-info" id="for_12_174"></td></tr><tr class="goles" style="display:none" id="gole_12_174"><td colspan="3" id="g1_12_174"></td><td colspan="3" id="g2_12_174"></td></tr></table></div><div id="abajo"><div id="botongral1"><a href="inglaterra">Seccion<br />Premier League</a></div><div id="botongral2" onclick="popup(12, 1)">Tabla<br />Pts</div><div id="botongral3b" class="ocu_12"></div><div id="botongral3a" class="son_12"></div></div><br style="clear: both" /></div><div class="cuadrono12" name='novi' copa="Premier League" id="cuadrono"></div><div class="51" name='novi'><div id="fixturein"><table cellspacing="0" ><tr><td class="game-time"></td><td class="game-t1"></td><td class="game-r1"></td><td class="game-r2"></td><td class="game-t2"></td><td class="game-info"></td></tr><tr class="tituloin" style="background:#08089b"><td colspan="6"><a href="reserva"><img src="images/paises/ar.png" /> RESERVA PRIMERA <img src="images/paises/ar.png" /></a></td></tr> <tr id="51_72" name='nvp'><td class="game-time" id="ti_51_72">09:00  </td><td class="game-t1"><img src='images/18/25.png' /><br /><span class="datoequipo" id="t1_51_72">Atl Tucuman</span></td><td class="game-r1" id="resu1_51_72"><div class="rojas1" id="roj1_51_72"></div><span id="r1_51_72"></span></td><td class="game-r2" id="resu2_51_72"><span id="r2_51_72"></span><div class="rojas2" id="roj2_51_72"></div></td><td class="game-t1"><img src='images/18/45.png' /><br /><span class="datoequipo" id="t2_51_72">Platense</span></td><td class="game-info" id="for_51_72"></td></tr><tr class="goles" style="display:none" id="gole_51_72"><td colspan="3" id="g1_51_72"></td><td colspan="3" id="g2_51_72"></td></tr> <tr id="51_73" name='nvp'><td class="game-time" id="ti_51_73">09:00  </td><td class="game-t1"><img src='images/18/52.png' /><br /><span class="datoequipo" id="t1_51_73">Talleres (C)</span></td><td class="game-r1" id="resu1_51_73"><div class="rojas1" id="roj1_51_73"></div><span id="r1_51_73"></span></td><td class="game-r2" id="resu2_51_73"><span id="r2_51_73"></span><div class="rojas2" id="roj2_51_73"></div></td><td class="game-t1"><img src='images/18/39.png' /><br /><span class="datoequipo" id="t2_51_73">Union</span></td><td class="game-info" id="for_51_73"></td></tr><tr class="goles" style="display:none" id="gole_51_73"><td colspan="3" id="g1_51_73"></td><td colspan="3" id="g2_51_73"></td></tr> <tr id="51_74" name='nvp'><td class="game-time" id="ti_51_74">09:00  <img src="images/ca/103.png" /></td><td class="game-t1"><img src='images/18/18.png' /><br /><span class="datoequipo" id="t1_51_74">River Plate</span></td><td class="game-r1" id="resu1_51_74"><div class="rojas1" id="roj1_51_74"></div><span id="r1_51_74"></span></td><td class="game-r2" id="resu2_51_74"><span id="r2_51_74"></span><div class="rojas2" id="roj2_51_74"></div></td><td class="game-t1"><img src='images/18/34.png' /><br /><span class="datoequipo" id="t2_51_74">Patronato</span></td><td class="game-info" id="for_51_74"></td></tr><tr class="goles" style="display:none" id="gole_51_74"><td colspan="3" id="g1_51_74"></td><td colspan="3" id="g2_51_74"></td></tr> <tr id="51_75" name='nvp'><td class="game-time" id="ti_51_75">09:00  </td><td class="game-t1"><img src='images/18/3.png' /><br /><span class="datoequipo" id="t1_51_75">Argentinos</span></td><td class="game-r1" id="resu1_51_75"><div class="rojas1" id="roj1_51_75"></div><span id="r1_51_75"></span></td><td class="game-r2" id="resu2_51_75"><span id="r2_51_75"></span><div class="rojas2" id="roj2_51_75"></div></td><td class="game-t1"><img src='images/18/14.png' /><br /><span class="datoequipo" id="t2_51_75">Newells</span></td><td class="game-info" id="for_51_75"></td></tr><tr class="goles" style="display:none" id="gole_51_75"><td colspan="3" id="g1_51_75"></td><td colspan="3" id="g2_51_75"></td></tr> <tr id="51_76" name='nvp'><td class="game-time" id="ti_51_76">09:00  </td><td class="game-t1"><img src='images/18/29.png' /><br /><span class="datoequipo" id="t1_51_76">Def y Justicia</span></td><td class="game-r1" id="resu1_51_76"><div class="rojas1" id="roj1_51_76"></div><span id="r1_51_76"></span></td><td class="game-r2" id="resu2_51_76"><span id="r2_51_76"></span><div class="rojas2" id="roj2_51_76"></div></td><td class="game-t1"><img src='images/18/17.png' /><br /><span class="datoequipo" id="t2_51_76">Racing Club</span></td><td class="game-info" id="for_51_76"></td></tr><tr class="goles" style="display:none" id="gole_51_76"><td colspan="3" id="g1_51_76"></td><td colspan="3" id="g2_51_76"></td></tr> <tr id="51_79" name='nvp'><td class="game-time" id="ti_51_79">09:00  </td><td class="game-t1"><img src='images/18/20.png' /><br /><span class="datoequipo" id="t1_51_79">Tigre</span></td><td class="game-r1" id="resu1_51_79"><div class="rojas1" id="roj1_51_79"></div><span id="r1_51_79"></span></td><td class="game-r2" id="resu2_51_79"><span id="r2_51_79"></span><div class="rojas2" id="roj2_51_79"></div></td><td class="game-t1"><img src='images/18/78.png' /><br /><span class="datoequipo" id="t2_51_79">Central Cba (SdE)</span></td><td class="game-info" id="for_51_79"></td></tr><tr class="goles" style="display:none" id="gole_51_79"><td colspan="3" id="g1_51_79"></td><td colspan="3" id="g2_51_79"></td></tr> <tr id="51_80" name='nvp'><td class="game-time" id="ti_51_80">09:00  </td><td class="game-t1"><img src='images/18/7.png' /><br /><span class="datoequipo" id="t1_51_80">Colon</span></td><td class="game-r1" id="resu1_51_80"><div class="rojas1" id="roj1_51_80"></div><span id="r1_51_80"></span></td><td class="game-r2" id="resu2_51_80"><span id="r2_51_80"></span><div class="rojas2" id="roj2_51_80"></div></td><td class="game-t1"><img src='images/18/10.png' /><br /><span class="datoequipo" id="t2_51_80">Godoy Cruz</span></td><td class="game-info" id="for_51_80"></td></tr><tr class="goles" style="display:none" id="gole_51_80"><td colspan="3" id="g1_51_80"></td><td colspan="3" id="g2_51_80"></td></tr> <tr id="51_82" name='nvp'><td class="game-time" id="ti_51_82">09:00  </td><td class="game-t1"><img src='images/18/35.png' /><br /><span class="datoequipo" id="t1_51_82">Rosario Central</span></td><td class="game-r1" id="resu1_51_82"><div class="rojas1" id="roj1_51_82"></div><span id="r1_51_82"></span></td><td class="game-r2" id="resu2_51_82"><span id="r2_51_82"></span><div class="rojas2" id="roj2_51_82"></div></td><td class="game-t1"><img src='images/18/21.png' /><br /><span class="datoequipo" id="t2_51_82">Velez</span></td><td class="game-info" id="for_51_82"></td></tr><tr class="goles" style="display:none" id="gole_51_82"><td colspan="3" id="g1_51_82"></td><td colspan="3" id="g2_51_82"></td></tr></table></div><div id="abajo"><div id="botongral1"><a href="reserva">Seccion<br />Reserva Primera</a></div><div id="botongral3b" class="ocu_51"></div><div id="botongral3a" class="son_51"></div></div><br style="clear: both" /></div><div class="cuadrono51" name='novi' copa="Reserva Primera" id="cuadrono"></div><div class="68" name='novi'><div id="fixturein"><table cellspacing="0" ><tr><td class="game-time"></td><td class="game-t1"></td><td class="game-r1"></td><td class="game-r2"></td><td class="game-t2"></td><td class="game-info"></td></tr><tr class="tituloin"><td colspan="6"><a href="colombia"><img src="images/paises/co.png" /> LIGA COLOMBIA <img src="images/paises/co.png" /></a></td></tr> <tr id="68_70" name='nvp'><td class="game-time" id="ti_68_70">20:00  </td><td class="game-t1"><img src='images/18/1365.png' /><br /><span class="datoequipo" id="t1_68_70">U. Magdalena</span></td><td class="game-r1" id="resu1_68_70"><div class="rojas1" id="roj1_68_70"></div><span id="r1_68_70"></span></td><td class="game-r2" id="resu2_68_70"><span id="r2_68_70"></span><div class="rojas2" id="roj2_68_70"></div></td><td class="game-t1"><img src='images/18/1333.png' /><br /><span class="datoequipo" id="t2_68_70">Bucaramanga</span></td><td class="game-info" id="for_68_70"></td></tr><tr class="goles" style="display:none" id="gole_68_70"><td colspan="3" id="g1_68_70"></td><td colspan="3" id="g2_68_70"></td></tr> <tr id="68_66" name='nvp'><td class="game-time" id="ti_68_66">22:05  </td><td class="game-t1"><img src='images/18/1334.png' /><br /><span class="datoequipo" id="t1_68_66">Envigado</span></td><td class="game-r1" id="resu1_68_66"><div class="rojas1" id="roj1_68_66"></div><span id="r1_68_66"></span></td><td class="game-r2" id="resu2_68_66"><span id="r2_68_66"></span><div class="rojas2" id="roj2_68_66"></div></td><td class="game-t1"><img src='images/18/662.png' /><br /><span class="datoequipo" id="t2_68_66">Atl. Nacional</span></td><td class="game-info" id="for_68_66"></td></tr><tr class="goles" style="display:none" id="gole_68_66"><td colspan="3" id="g1_68_66"></td><td colspan="3" id="g2_68_66"></td></tr></table></div><div id="abajo"><div id="botongral1"><a href="colombia">Seccion<br />Liga Colombia</a></div><div id="botongral2" onclick="popup(68, 1)">Tabla<br />Pts</div><div id="botongral3b" class="ocu_68"></div><div id="botongral3a" class="son_68"></div></div><br style="clear: both" /></div><div class="cuadrono68" name='novi' copa="Liga Colombia" id="cuadrono"></div><div class="87" name='novi'><div id="fixturein"><table cellspacing="0" ><tr><td class="game-time"></td><td class="game-t1"></td><td class="game-r1"></td><td class="game-r2"></td><td class="game-t2"></td><td class="game-info"></td></tr><tr class="tituloin"><td colspan="6"><a href="mexico"><img src="images/paises/mx.png" /> LIGA MEXICO <img src="images/paises/mx.png" /></a></td></tr> <tr id="87_41" name='nvp'><td class="game-fin" id="ti_87_41">Final</td><td class="game-t1"><img src='images/18/902.png' /><br /><span class="datoequipo" id="t1_87_41">Pachuca</span></td><td class="game-r1" id="resu1_87_41"><div class="rojas1" id="roj1_87_41"></div><span id="r1_87_41">2</span></td><td class="game-r2" id="resu2_87_41"><span id="r2_87_41">2</span><div class="rojas2" id="roj2_87_41"></div></td><td class="game-t1"><img src='images/18/904.png' /><br /><span class="datoequipo" id="t2_87_41">Queretaro</span></td><td class="game-info" id="for_87_41"><a href="ficha=xjxjzqcvqy"><i class="material-icons md-18">add_box</i></a></td><tr name='nvp' class="goles" id="gole_87_41"><td colspan="3" id="g1_87_41"><i>15'</i> N. Iba&ntilde;ez; <i>41'</i> L. Chavez; </td><td colspan="3" id="g2_87_41"><i>5'</i> J. Angulo; <i>63'</i> A. Sepulveda; </td></tr></table></div><div id="abajo"><div id="botongral1"><a href="mexico">Seccion<br />Liga Mexico</a></div><div id="botongral2" onclick="popup(87, 1)">Tabla<br />Pts</div><div id="botongral3b" class="ocu_87"></div><div id="botongral3a" class="son_87"></div></div><br style="clear: both" /></div><div class="cuadrono87" name='novi' copa="Liga Mexico" id="cuadrono"></div>
+<br style="clear: both;" />
+
+<br style="clear: both;" />
+<div id="cajadia2">
+<span class="titucuadros">HOY Martes 15 de Febrero de 2022</span><br /><div class="titulo2">Cumpleaños</div><br /><strong>Emiliano M&eacute;ndez</strong> (Sarmiento (J)) cumple hoy <strong>33</strong> años.<br /><br /><strong>Alejandro Gomez</strong> (Sevilla) cumple hoy <strong>34</strong> años.<br /><br /><strong>Rodrigo Marquez</strong> (Independiente) cumple hoy <strong>20</strong> años.<br /><br /><strong>Manuel Lanzini</strong> (West Ham) cumple hoy <strong>29</strong> años.<br /><br /><strong>Matias Mansilla</strong> (Patronato) cumple hoy <strong>26</strong> años.<br /><br /><a href="calendario"><div id="verficha">Calendario Extendido</div></a><br /><br />
+</div>
+
+<br style="clear: both;" /><br />
+
+<br style="clear: both;" />
+<br />
+<div style="text-align: center; color:white;font-size:12px;font-weight:bold">
+Pulsar el botón <i class="material-icons" style="font-size: 12px;background:green">volume_up</i> en la liga elegida para silenciar el grito de gol de dicha liga.<br />
+Pulsar el botón <i class="material-icons" style="font-size: 12px;background: #580000">cancel_presentation</i> para ocultar y silenciar las ligas que no te interesan.<br />
+Para que esta configuración quede guardada cada vez que entres, registrate!
+</div>
+</div>
+
+
+<script type="text/javascript" src="js/abajoindex.js"></script>
+
+<div id="footer">
+<br /><br /><br /><br />
+</div>
+</div>
+
+
+
+</body>
+</html>
