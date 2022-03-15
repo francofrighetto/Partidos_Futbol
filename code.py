@@ -2,11 +2,13 @@ import re
 import tkinter 
 from datetime import date, datetime
 #import subprocess
-#import sys
+import sys
 from os import path
 #import os
 import socket
+from turtle import pen
 import requests
+import os
 
 """hacer q avise el torneo"""
 #game-fin si termino
@@ -18,10 +20,27 @@ import requests
 # voy a tener <id t1>equipo<algo>
 # lo q tengo q hacer es split con > y si encuentra un t1o2 le siguiente campo es el equipo y le vuelvo a hacer un split
 
+
 # esto de aca nose si lo uso
 def CamposParaFinal(campo, nombre):
     campos_si = campo.split("<tr")
     return Final(campos_si,nombre)
+
+def verGoles():
+    root_goles = tkinter.Tk()
+    root_goles.title("Goles")
+    #800x260+100+40"
+    root_goles.geometry("800x260+100+350")
+    #root_goles.iconbitmap(file_absolute+'river.ico')
+    root_goles.maxsize(800, 260)
+    root_goles.minsize(800,260)
+
+    f_goles = open("goles.txt","r")
+    goles = f_goles.readlines()
+    label_goles = tkinter.Label(root_goles,text="".join(goles),font=("Arial",11),anchor="nw")
+    label_goles.place(x=30,y=30)
+    f_goles.close()
+    root_goles.mainloop()
 
 def Partido(vec, nombre):
     mensaje=""
@@ -30,21 +49,22 @@ def Partido(vec, nombre):
             campos = vec[i].split("copa=")
             for f in range(len(campos)):
                 if nombre in campos[f]:
+                    campos_si=""
                     if nombre == "River Plate":
                         if "(URUGUAY)" not in campos[f] and "(U)" not in campos[f] and "FEMENINO" not in campos[f]:
                             campos_si = campos[f].split("tr")
-                            mensaje = Final(campos_si, nombre)
-                            if "RESERVA PRIMERA" in campos[f]:
-                                print("si")
-                                separado = mensaje.split(" ")
-                                separado = separado[2:len(separado)]
-                                mensaje = "River Plate (R) "+ (" ").join(separado)
+                            
                     elif nombre =="Argentina" and "div" in campos[f]:
                         campos_si = campos[f].split("tr")
-                        mensaje = Final(campos_si, nombre)
                     elif nombre =="Chelsea":
                         campos_si = campos[f].split("tr")
-                        mensaje = Final(campos_si,nombre)
+                    
+                    if campos_si!="":
+                        mensaje = Final(campos_si, nombre)
+                    if "RESERVA PRIMERA" in campos[f]:
+                        separado = mensaje.split(" ")
+                        separado = separado[2:len(separado)]
+                        mensaje = "River Plate (R) "+ (" ").join(separado)
 
     return mensaje
 
@@ -54,7 +74,12 @@ def Final(campos, nombre):
     tipo_partido = ""
     campodetallado =""
     mensaje=""
+    copa=""
     for j in range(len(campos)):
+        if "tituloin" in campos[j]:
+            copa = campos[j].split("/> ")
+            copa = copa[1].split(" <")
+            copa = copa[0].title()
         if nombre in campos[j]:
             campodetallado = campos[j].split(">")
             for k in range(len(campodetallado)):
@@ -129,9 +154,38 @@ def Final(campos, nombre):
                         mensaje = nombre+" jugo contra "+equipo1+" de visitante y empato: "+str(resultado1)+" a "+str(resultado2)
                     elif resultado1 < resultado2:
                         mensaje = nombre+" jugo contra "+equipo1+" de local y gano: "+str(resultado1)+" a "+str(resultado2)
-                
-            return mensaje
+        if "goles" in campos[j] and nombre in campos[j-1]:
+            
+            #print(campos[j].split("<i>"))   
+            #print(equipo)     
+            goles_ambos= campos[j].split('id="g')
+            goles_quipo1=goles_ambos[2].split(";")
+            goles_quipo1=goles_quipo1[0:len(goles_quipo1)-1]
+            goles_quipo2=goles_ambos[3].split(";")
+            goles_quipo2=goles_quipo2[0:len(goles_quipo2)-1]
+            f_goles = open("goles.txt","a")
 
+            f_goles.write(equipo1+": ")
+            gol=""
+            for h in range(len(goles_quipo1)):
+                gol=goles_quipo1[h].split("<i>")
+                gol=gol[1].split("</i>")
+                f_goles.write((str(gol[0])+" -"+str(gol[1]))+" ; ")
+            f_goles.write("\n\t")
+
+            f_goles.write(equipo2+": ")
+            for h in range(len(goles_quipo2)):
+                gol=goles_quipo2[h].split("<i>")
+                gol=gol[1].split("</i>")
+                f_goles.write((str(gol[0])+" de"+str(gol[1]))+" ; ")
+            f_goles.write("\n\n")
+            f_goles.close()
+
+            #return mensaje + " ("+copa+")"
+    return mensaje + " ("+copa+")"
+
+def terminar():
+    sys.exit()
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.settimeout(5)
@@ -149,7 +203,18 @@ fd = open(file_absolute+"dia.txt","r")
 dia = fd.read()
 fd.close()
 
-if dia != str(date.today()) and wifi:
+now = datetime.now()
+dias_ingles = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+#CAMBIA ESTA VARIABLE PAJERO
+dia_str=datetime.today().strftime('%A')
+verificador_dia=True
+try:
+    if dias_ingles.index(dia_str) < 5 and now.hour>12 and now.hour<20:
+        verificador_dia=False
+except ValueError:
+    pass
+
+if dia != str(date.today()) and wifi and verificador_dia:
     fd = open(file_absolute+"dia.txt","w")
     dia = str(date.today())
     fd.write(dia)
@@ -171,8 +236,11 @@ if dia != str(date.today()) and wifi:
         vec.append(new_string)
     junto =""
 
+    f_goles=open("goles.txt","w")
+    f_goles.close()
+
     vec_mensajes.append(Partido(vec, "River Plate"))
-    #vec_mensajes.append(Partido(vec, "Chelsea"))
+    vec_mensajes.append(Partido(vec, "Chelsea"))
     vec_mensajes.append(Partido(vec, "Argentina"))
     for i in range(len(vec_mensajes)):
         if vec_mensajes[i] != "":
@@ -181,12 +249,21 @@ if dia != str(date.today()) and wifi:
     if junto != "":
         root = tkinter.Tk()
         root.title("Es de mi placer informar que hoy rueda el esferico")
-        root.geometry("700x260")
+        root.geometry("800x260+100+40")
         root.iconbitmap(file_absolute+'river.ico')
-        root.maxsize(700, 260)
-        root.minsize(700,260)
+        root.maxsize(800, 260)
+        root.minsize(800,260)
+        root.protocol("WM_DELETE_WINDOW",terminar)
 
         img = tkinter.PhotoImage(file=file_absolute+'pelotita.png')
-        imgl = tkinter.Label(root,image=img).place(x=30,y=30)
-        label_info = tkinter.Label(root,text=junto,font=("Arial",11)).place(x=260,y=80)
+        imgl = tkinter.Label(root,image=img)
+        imgl.place(x=30,y=30)
+
+        label_info = tkinter.Label(root,text=junto,font=("Arial",11))
+        label_info.place(x=260,y=80)
+
+        btn_goles = tkinter.Button(root,text="Ver goles",font=("Arial",11),command=verGoles)
+        btn_goles.place(x=400,y=220)
         root.mainloop()
+
+
