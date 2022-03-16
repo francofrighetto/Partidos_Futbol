@@ -1,3 +1,4 @@
+from gc import disable
 import re
 import tkinter 
 from datetime import date, datetime
@@ -52,19 +53,28 @@ def Partido(vec, nombre):
                     campos_si=""
                     if nombre == "River Plate":
                         if "(URUGUAY)" not in campos[f] and "(U)" not in campos[f] and "FEMENINO" not in campos[f]:
+                            print(campos[f])
                             campos_si = campos[f].split("tr")
+                            mensaje = Final(campos_si, nombre)
+
+                            if "RESERVA PRIMERA" in campos[f]:
+                                separado = mensaje.split(" ")
+                                separado = separado[2:len(separado)]
+                                mensaje = "River Plate (R) "+ (" ").join(separado)
                             
                     elif nombre =="Argentina" and "div" in campos[f]:
                         campos_si = campos[f].split("tr")
+                        validar=False
+                        for t in range(len(campos_si)):
+                            if nombre in campos_si[t]:
+                                if "datoequipo" in campos_si[t]:
+                                    validar=True
+                        if validar:
+                            mensaje = Final(campos_si, nombre)
                     elif nombre =="Chelsea":
                         campos_si = campos[f].split("tr")
-                    
-                    if campos_si!="":
                         mensaje = Final(campos_si, nombre)
-                    if "RESERVA PRIMERA" in campos[f]:
-                        separado = mensaje.split(" ")
-                        separado = separado[2:len(separado)]
-                        mensaje = "River Plate (R) "+ (" ").join(separado)
+                                       
 
     return mensaje
 
@@ -77,9 +87,13 @@ def Final(campos, nombre):
     copa=""
     for j in range(len(campos)):
         if "tituloin" in campos[j]:
+            """print(campos[j])
+            print(nombre)
+            print("------------")"""
             copa = campos[j].split("/> ")
             copa = copa[1].split(" <")
             copa = copa[0].title()
+        
         if nombre in campos[j]:
             campodetallado = campos[j].split(">")
             for k in range(len(campodetallado)):
@@ -171,7 +185,7 @@ def Final(campos, nombre):
                 gol=goles_quipo1[h].split("<i>")
                 gol=gol[1].split("</i>")
                 f_goles.write((str(gol[0])+" -"+str(gol[1]))+" ; ")
-            f_goles.write("\n\t")
+            f_goles.write("\n")
 
             f_goles.write(equipo2+": ")
             for h in range(len(goles_quipo2)):
@@ -214,6 +228,9 @@ try:
 except ValueError:
     pass
 
+f_goles=open("goles.txt","w")
+f_goles.close()
+
 if dia != str(date.today()) and wifi and verificador_dia:
     fd = open(file_absolute+"dia.txt","w")
     dia = str(date.today())
@@ -236,8 +253,7 @@ if dia != str(date.today()) and wifi and verificador_dia:
         vec.append(new_string)
     junto =""
 
-    f_goles=open("goles.txt","w")
-    f_goles.close()
+    
 
     vec_mensajes.append(Partido(vec, "River Plate"))
     vec_mensajes.append(Partido(vec, "Chelsea"))
@@ -262,8 +278,19 @@ if dia != str(date.today()) and wifi and verificador_dia:
         label_info = tkinter.Label(root,text=junto,font=("Arial",11))
         label_info.place(x=260,y=80)
 
+        f_goles=open("goles.txt","r")
+        goles=f_goles.readlines()
+        f_goles.close()
+
         btn_goles = tkinter.Button(root,text="Ver goles",font=("Arial",11),command=verGoles)
         btn_goles.place(x=400,y=220)
+
+        if len(goles)==0:
+            btn_goles.configure(state="disabled")
+
+        
+        
+
         root.mainloop()
 
 
