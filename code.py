@@ -31,10 +31,10 @@ def verGoles():
     root_goles = tkinter.Tk()
     root_goles.title("Goles")
     #800x260+100+40"
-    root_goles.geometry("800x260+100+350")
+    root_goles.geometry("1000x260+100+350")
     #root_goles.iconbitmap(file_absolute+'river.ico')
-    root_goles.maxsize(800, 260)
-    root_goles.minsize(800,260)
+    root_goles.maxsize(1000, 260)
+    root_goles.minsize(1000,260)
 
     f_goles = open("goles.txt","r")
     goles = f_goles.readlines()
@@ -49,11 +49,12 @@ def Partido(vec, nombre):
         if nombre in vec[i]:
             campos = vec[i].split("copa=")
             for f in range(len(campos)):
-                if nombre in campos[f]:
+                if nombre in campos[f] and not "Aniversarios" in campos[f]:
                     campos_si=""
                     if nombre == "River Plate":
                         if "(URUGUAY)" not in campos[f] and "(U)" not in campos[f] and "FEMENINO" not in campos[f]:
                             print(campos[f])
+
                             campos_si = campos[f].split("tr")
                             mensaje = Final(campos_si, nombre)
 
@@ -74,7 +75,6 @@ def Partido(vec, nombre):
                     elif nombre =="Chelsea":
                         campos_si = campos[f].split("tr")
                         mensaje = Final(campos_si, nombre)
-                                       
 
     return mensaje
 
@@ -87,9 +87,6 @@ def Final(campos, nombre):
     copa=""
     for j in range(len(campos)):
         if "tituloin" in campos[j]:
-            """print(campos[j])
-            print(nombre)
-            print("------------")"""
             copa = campos[j].split("/> ")
             copa = copa[1].split(" <")
             copa = copa[0].title()
@@ -105,7 +102,7 @@ def Final(campos, nombre):
                     tipo_partido = "jugando"
                                 
             hora = campodetallado[2].split("<")
-            hora = hora[0]
+            hora = hora[0][0:-1]
 
             for k in range(len(campodetallado)):
                 if "t1_" in campodetallado[k]:
@@ -179,19 +176,19 @@ def Final(campos, nombre):
             goles_quipo2=goles_quipo2[0:len(goles_quipo2)-1]
             f_goles = open("goles.txt","a")
 
-            f_goles.write(equipo1+": ")
+            f_goles.write(equipo1+":  ")
             gol=""
             for h in range(len(goles_quipo1)):
                 gol=goles_quipo1[h].split("<i>")
                 gol=gol[1].split("</i>")
-                f_goles.write((str(gol[0])+" -"+str(gol[1]))+" ; ")
+                f_goles.write((str(gol[0])+" -"+str(gol[1]))+"  ;  ")
             f_goles.write("\n")
 
-            f_goles.write(equipo2+": ")
+            f_goles.write(equipo2+":  ")
             for h in range(len(goles_quipo2)):
                 gol=goles_quipo2[h].split("<i>")
                 gol=gol[1].split("</i>")
-                f_goles.write((str(gol[0])+" de"+str(gol[1]))+" ; ")
+                f_goles.write((str(gol[0])+" -"+str(gol[1]))+"  ;  ")
             f_goles.write("\n\n")
             f_goles.close()
 
@@ -224,12 +221,14 @@ dia_str=datetime.today().strftime('%A')
 verificador_dia=True
 try:
     if dias_ingles.index(dia_str) < 5 and now.hour>12 and now.hour<20:
-        verificador_dia=False
+        verificador_dia=True
 except ValueError:
     pass
 
 f_goles=open("goles.txt","w")
 f_goles.close()
+
+dia=""
 
 if dia != str(date.today()) and wifi and verificador_dia:
     fd = open(file_absolute+"dia.txt","w")
@@ -254,9 +253,9 @@ if dia != str(date.today()) and wifi and verificador_dia:
     junto =""
 
     
-
-    vec_mensajes.append(Partido(vec, "River Plate"))
     vec_mensajes.append(Partido(vec, "Chelsea"))
+    vec_mensajes.append(Partido(vec, "River Plate"))
+    
     vec_mensajes.append(Partido(vec, "Argentina"))
     for i in range(len(vec_mensajes)):
         if vec_mensajes[i] != "":
@@ -265,10 +264,10 @@ if dia != str(date.today()) and wifi and verificador_dia:
     if junto != "":
         root = tkinter.Tk()
         root.title("Es de mi placer informar que hoy rueda el esferico")
-        root.geometry("800x260+100+40")
+        root.geometry("1000x260+100+40")
         root.iconbitmap(file_absolute+'river.ico')
-        root.maxsize(800, 260)
-        root.minsize(800,260)
+        root.maxsize(1000, 260)
+        root.minsize(1000,260)
         root.protocol("WM_DELETE_WINDOW",terminar)
 
         img = tkinter.PhotoImage(file=file_absolute+'pelotita.png')
@@ -281,12 +280,26 @@ if dia != str(date.today()) and wifi and verificador_dia:
         f_goles=open("goles.txt","r")
         goles=f_goles.readlines()
         f_goles.close()
+        goles_final =[]
+        for t in range(len(goles)):
+            campos_goles = goles[t].split("-")
+
+            if len(campos_goles) >1 or campos_goles==["\n"]:
+                goles_final.append(goles[t])
+
+        
 
         btn_goles = tkinter.Button(root,text="Ver goles",font=("Arial",11),command=verGoles)
         btn_goles.place(x=400,y=220)
 
-        if len(goles)==0:
+        if len(goles_final)!=0:
+            f_goles=open("goles.txt","w")
+            for t in range(len(goles_final)):
+                f_goles.write(goles_final[t])
+            f_goles.close()
+        elif len(goles_final)==0:
             btn_goles.configure(state="disabled")
+
 
         
         
