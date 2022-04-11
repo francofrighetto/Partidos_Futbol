@@ -49,7 +49,7 @@ def Partido(vec, nombre):
         if nombre in vec[i]:
             campos = vec[i].split("copa=")
             for f in range(len(campos)):
-                if nombre in campos[f] and not "Aniversarios" in campos[f]:
+                if nombre in campos[f] and not "Cumpleaños" in campos[f]:
                     campos_si=""
                     if nombre == "River Plate":
                         if "(URUGUAY)" not in campos[f] and "(U)" not in campos[f] and "FEMENINO" not in campos[f]:
@@ -230,7 +230,8 @@ f_goles.close()
 
 dia=""
 
-if dia != str(date.today()) and wifi and verificador_dia:
+#if dia != str(date.today()) and wifi and verificador_dia:
+if True:
     fd = open(file_absolute+"dia.txt","w")
     dia = str(date.today())
     fd.write(dia)
@@ -255,7 +256,6 @@ if dia != str(date.today()) and wifi and verificador_dia:
     
     vec_mensajes.append(Partido(vec, "Chelsea"))
     vec_mensajes.append(Partido(vec, "River Plate"))
-    
     vec_mensajes.append(Partido(vec, "Argentina"))
     for i in range(len(vec_mensajes)):
         if vec_mensajes[i] != "":
