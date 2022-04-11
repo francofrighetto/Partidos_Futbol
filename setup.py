@@ -7,6 +7,6 @@ if sys.platform == "win32":
 setup (
     name="Partidos",
     version="1.3",
-    description ="Muestra cuando juega/o River, Chelsea y Argentina",
+    description ="Partidos",
     executables = [Executable("code.py",base=base, icon="river.ico")]
 )
