@@ -53,7 +53,6 @@ def Partido(vec, nombre):
                     campos_si=""
                     if nombre == "River Plate":
                         if "(URUGUAY)" not in campos[f] and "(U)" not in campos[f] and "FEMENINO" not in campos[f]:
-                            print(campos[f])
 
                             campos_si = campos[f].split("tr")
                             mensaje = Final(campos_si, nombre)
@@ -87,9 +86,12 @@ def Final(campos, nombre):
     copa=""
     for j in range(len(campos)):
         if "tituloin" in campos[j]:
-            copa = campos[j].split("/> ")
-            copa = copa[1].split(" <")
-            copa = copa[0].title()
+            try:
+                copa = campos[j].split("/> ")
+                copa = copa[1].split(" <")
+                copa = copa[0].title()
+            except:
+                copa=""
         
         if nombre in campos[j]:
             campodetallado = campos[j].split(">")
@@ -228,10 +230,9 @@ except ValueError:
 f_goles=open("goles.txt","w")
 f_goles.close()
 
-dia=""
 
-#if dia != str(date.today()) and wifi and verificador_dia:
-if True:
+
+if dia != str(date.today()) and wifi and verificador_dia:
     fd = open(file_absolute+"dia.txt","w")
     dia = str(date.today())
     fd.write(dia)
